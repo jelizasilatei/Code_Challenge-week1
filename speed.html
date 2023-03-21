@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>CODE CHALLENGE</title>
+  <link rel="stylesheet" href="index.css">
+  <!--Navigation bar-->
+  <nav>
+    <!--menu--> 
+    <ul>
+        <li><button onclick="document.location='marks.html'">Student Grade Generator</button></li>
+        <li><button onclick="document.location='speed.html'">Speed Detector</button></li> 
+        <li><button onclick="document.location='salary.html'">Net Salary Calculator</button></li>  
+    </ul> 
+  </nav>
+</head>
+<body>
+    <!-------------------Challenge 2: Speed Detector (Toy Problem)---------------------------->
+    <section>
+        <h1>Speed Detector</h1>
+        <form id="form">
+            <label for="speed-input">Enter the speed of the car:</label><br>
+            <input type="number" id="speed-input" name="speed" required>
+            <button type="submit">Check speed</button>
+        </form>
+        <div id="result"></div>
+    </section>
+    <script src="speed.js"></script>
+</body>
+</html>
