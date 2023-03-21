@@ -92,7 +92,7 @@ body {
 
   /* Style the button element on hover */
   button:hover {
-    background-color: #3e8e41;
+    background-color: #414349;
   }
   
   /* Style the p element with the grade output */
@@ -103,7 +103,7 @@ body {
     color: rgb(128, 24, 3);
   }
 
-  #marks{
+  #grade{
     text-align: center;
   }
 

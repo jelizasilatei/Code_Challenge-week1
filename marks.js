@@ -2,7 +2,7 @@
 
 function calculateGrade() {
     // Get the input element and its value
-    var inputElement = document.getElementById("marks-input");
+    var inputElement = document.getElementById("grade-input");
     var marks = inputElement.value;
     
     // Calculate the grade based on the marks

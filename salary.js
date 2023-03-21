@@ -1,10 +1,10 @@
-//Initialize
-let paye = 0;
-let NHIFDeductions = 0;
-let NSSFDeductions = 1080;
+//Initialize variables
 let grossSalary = 0;
-let benefits = 0;   
-let grossSalaryAfterNSSF = 0;
+let benefits = 0; 
+let paye = 0;
+let NHIFDeducts = 0;
+let NSSFDeducts = 1080;  
+let grossSalaryNSSF = 0;
 let netSalary = 0;
 let taxablePay = 0;
 
@@ -14,13 +14,13 @@ let form = document.querySelector("#form2");
 //listens for a form submission event using an event listener attached to the form element. 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    grossSalary = document.querySelector("#basicSalary").value ; 
+    grossSalary = document.querySelector("#salary").value ; 
     benefits = document.querySelector("#benefits").value ; 
-    grossSalaryAfterNSSF = grossSalary -benefits - NSSFDeductions;
+    grossSalaryNSSF = grossSalary -benefits - NSSFDeducts;
     console.log(grossSalary);
-    console.log(grossSalaryAfterNSSF);
-    calculatePAYEperMonth(grossSalaryAfterNSSF);
-    calculateNHIFdeductions(grossSalaryAfterNSSF);
+    console.log(grossSalaryNSSF);
+    calculatePAYEMonthly(grossSalaryNSSF);
+    calculateNHIFdeducts(grossSalaryNSSF);
     calculateNetSalary();
     let textNetSalary = document.querySelector('#output');
     textNetSalary.textContent = netSalary;
@@ -28,28 +28,24 @@ form.addEventListener("submit", (e) => {
 
 // Calculate NHIF deductions and PAYE only if grossSalary has a value
 if(grossSalary){ 
-
-    calculateNHIFdeductions(grossSalary);
-    calculatePAYEperMonth(grossSalary);
-
-   
+    calculateNHIFdeducts(grossSalary);
+    calculatePAYEMonthly(grossSalary);
     calculateNetSalary();
-
 }
 
-// Calculate PAYE per month based on grossSalaryAfterNSSF
-// The function checks the value of the grossSalaryAfterNSSF and applies different tax rates based on predefined income tax brackets. 
-function calculatePAYEperMonth(grossSalaryAfterNSSF){
+// Calculate PAYE per month based on grossSalaryNSSF
+// The function checks the value of the grossSalaryNSSF and applies different tax rates based on predefined income tax brackets. 
+function calculatePAYEMonthly(grossSalaryAfterNSSF){
 
-    if(grossSalaryAfterNSSF <= 24000){
+    if(grossSalaryNSSF <= 24000){
         taxablePay = 24000;
         paye = taxablePay * 0.1;
 
-    }else if(grossSalaryAfterNSSF <= 32333){
+    }else if(grossSalaryNSSF <= 32333){
         taxablePay = 8333.33;
         paye = taxablePay * 0.25;
 
-    }else if(grossSalaryAfterNSSF > 32333){
+    }else if(grossSalaryNSSF > 32333){
         taxablePay = 16586.67;
         paye = taxablePay * 0.30;
 
@@ -59,71 +55,71 @@ function calculatePAYEperMonth(grossSalaryAfterNSSF){
      return paye;
 }
 
-//The calculateNHIFdeductions function calculates the NHIF deductions based on the grossSalary.
+//The calculateNHIFdeducts function calculates the NHIF deductions based on the grossSalary.
 //The function checks the value of the grossSalary and applies different NHIF contribution rates based on predefined income brackets. 
-function calculateNHIFdeductions(grossSalary){
+function calculateNHIFdeducts(grossSalary){
 
     if(grossSalary <= 5999){
-        NHIFDeductions = 150;
+        NHIFDeducts = 150;
 
     }else if(grossSalary <= 7999){
-        NHIFDeductions = 300;
+        NHIFDeducts = 300;
 
     }else if(grossSalary <= 11999){
-        NHIFDeductions = 400;
+        NHIFDeducts = 400;
 
     }else if(grossSalary <= 14999){
-        NHIFDeductions = 500
+        NHIFDeducts = 500
 
     }else if(grossSalary <= 19999){
-        NHIFDeductions = 600
+        NHIFDeducts = 600
 
     }else if(grossSalary <= 24999){
-        NHIFDeductions = 750
+        NHIFDeducts = 750
 
     }else if(grossSalary <= 29999){
-        NHIFDeductions = 850
+        NHIFDeducts = 850
 
     }else if(grossSalary <= 34999){
-        NHIFDeductions = 900
+        NHIFDeducts = 900
 
     }else if(grossSalary <= 39999){
-        NHIFDeductions = 950
+        NHIFDeducts = 950
 
     }else if(grossSalary <= 44999){
-        NHIFDeductions = 1000
+        NHIFDeducts = 1000
 
     }else if(grossSalary <= 49999){
-        NHIFDeductions = 1100
+        NHIFDeducts = 1100
 
     }else if(grossSalary <= 59999){
-        NHIFDeductions = 1200
+        NHIFDeducts = 1200
 
     }else if(grossSalary <= 69999){
-        NHIFDeductions = 1300
+        NHIFDeducts = 1300
 
     }else if(grossSalary <= 79999){
-        NHIFDeductions = 1400
+        NHIFDeducts = 1400
 
     }else if(grossSalary <= 89999){
-        NHIFDeductions = 5100
+        NHIFDeducts = 5100
 
     }else if(grossSalary <= 99999){
-        NHIFDeductions = 1600
+        NHIFDeducts = 1600
 
     }else if(grossSalary >= 100000){
-        NHIFDeductions = 1700
+        NHIFDeducts = 1700
 
     }
     
     //returns the calculated NHIF deductions.
-    return NHIFDeductions;
+    return NHIFDeducts;
 }
 
-//The calculateNetSalary function calculates the net salary by subtracting the PAYE and NHIF deductions from the grossSalaryAfterNSSF.
+//The calculateNetSalary function calculates the net salary by subtracting the PAYE and NHIF deductions from the grossSalaryNSSF.
 function calculateNetSalary() {
 
-    netSalary = grossSalaryAfterNSSF - paye - NHIFDeductions ;
+    netSalary = grossSalaryNSSF - paye - NHIFDeducts ;
     //returns the calculated net salary.
     return netSalary;
 }

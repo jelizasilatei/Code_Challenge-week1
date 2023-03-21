@@ -1,6 +1,6 @@
 // This code listens for the DOMContentLoaded event, then gets references to the relevant HTML elements.
 document.addEventListener('DOMContentLoaded', function() {
-    const speedInput = document.getElementById('speed-input');
+    const speedDetector = document.getElementById('speed-detector');
     //const submitBtn = document.getElementById('submit-btn');
     const resultDiv = document.getElementById('result');
     let form = document.getElementById("form");
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // The calculateSpeed function reads the input value and calculates points based on the speed.
     function calculateSpeed() {
-      const speed = parseInt(speedInput.value);
+      const speed = parseInt(speedDetector.value);
       let points = 0;
       
       // The result is then displayed in the resultDiv element.
