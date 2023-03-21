@@ -11,6 +11,7 @@ let taxablePay = 0;
 // Get input values from the form and calculate the net salary when the form is submitted
 let form = document.querySelector("#form2");
 
+//listens for a form submission event using an event listener attached to the form element. 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     grossSalary = document.querySelector("#basicSalary").value ; 
@@ -37,6 +38,7 @@ if(grossSalary){
 }
 
 // Calculate PAYE per month based on grossSalaryAfterNSSF
+// The function checks the value of the grossSalaryAfterNSSF and applies different tax rates based on predefined income tax brackets. 
 function calculatePAYEperMonth(grossSalaryAfterNSSF){
 
     if(grossSalaryAfterNSSF <= 24000){
@@ -52,11 +54,13 @@ function calculatePAYEperMonth(grossSalaryAfterNSSF){
         paye = taxablePay * 0.30;
 
     }
-
+     //rounds off the calculated PAYE value to the nearest integer using the Math.floor method and returns the result.
      paye = Math.floor(paye);
      return paye;
 }
 
+//The calculateNHIFdeductions function calculates the NHIF deductions based on the grossSalary.
+//The function checks the value of the grossSalary and applies different NHIF contribution rates based on predefined income brackets. 
 function calculateNHIFdeductions(grossSalary){
 
     if(grossSalary <= 5999){
@@ -111,18 +115,16 @@ function calculateNHIFdeductions(grossSalary){
         NHIFDeductions = 1700
 
     }
-
+    
+    //returns the calculated NHIF deductions.
     return NHIFDeductions;
 }
 
-
-
-
-
+//The calculateNetSalary function calculates the net salary by subtracting the PAYE and NHIF deductions from the grossSalaryAfterNSSF.
 function calculateNetSalary() {
 
     netSalary = grossSalaryAfterNSSF - paye - NHIFDeductions ;
-
+    //returns the calculated net salary.
     return netSalary;
 }
 

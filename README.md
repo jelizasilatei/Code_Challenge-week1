@@ -1,5 +1,8 @@
 # Code_Challenge-week1
 
+# Author
+Jeliza Silatei
+
 ## Student Grade Generator
 
 This code generates a simple web page that prompts the user to input a student's marks and calculates and displays the corresponding grade based on the input. The grades are calculated as follows:
@@ -13,9 +16,12 @@ This code generates a simple web page that prompts the user to input a student's
 ## Speed Detector
 This program is designed to take as input the speed of a car and determine the number of demerit points the driver should receive, based on the speed limit and the amount by which the speed exceeds the limit.
 
+## Net Salary Calculator
+This is a JavaScript program that calculates the net salary of an employee based on their basic salary, benefits, and deductions for NHIF and PAYE.
+
 # How to use
 1. Clone or download the repository.
-2. Open the marks.html file in your web browser.
+2. Open the index.html file in your web browser.
 3. The program will automatically load and be ready for use.
 
 4. For Student grade generator: 
@@ -29,6 +35,10 @@ This program is designed to take as input the speed of a car and determine the n
 * Click the check speed button.
 * The program will display either the number of demerit points or "License suspended", depending on whether the driver has accumulated more than 12 demerit points.
 
+6. For Net Salary Calculator:
+* Fill in the basic salary and benefits fields, then submit the form.
+* The net salary will be displayed below the form.
+
 
 # Technologies used
 This code was written in JavaScript and uses HTML and CSS to display the input and output fields.
@@ -37,4 +47,4 @@ This code was written in JavaScript and uses HTML and CSS to display the input a
 This code is licensed under the MIT License. You are free to use, modify, and distribute it as you like.
 
 # Credits
-This code was written by [Jeliza Silatei] and was based on a toy problem from [Insert Source Here].
+This code was written by [Jeliza Silatei] and was based on a toy problem.
