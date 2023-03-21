@@ -1,7 +1,6 @@
 # Code_Challenge-week1
 
-# Author
-Jeliza Silatei
+### Author:Jeliza Silatei
 
 ## Student Grade Generator
 
@@ -47,4 +46,4 @@ This code was written in JavaScript and uses HTML and CSS to display the input a
 This code is licensed under the MIT License. You are free to use, modify, and distribute it as you like.
 
 # Credits
-This code was written by [Jeliza Silatei] and was based on a toy problem.
+This code was written by Jeliza Silatei and was based on a toy problem.
